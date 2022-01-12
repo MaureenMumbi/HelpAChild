@@ -11,16 +11,13 @@ interface ChildDao {
      fun getAllChildren(): Flow<List<Child>>
 
     @Query("SELECT * FROM child WHERE childId = :id ")
-     fun getChildById(id: Long):Child
+    suspend fun getChildById(id: Long):Child
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(child: Child)
 
     @Delete
     suspend fun delete(child: Child)
-
-//    @Delete
-//    fun deleteAll()
 
     @Query("DELETE FROM child where childId =:id")
     fun deleteByID(id:Long)

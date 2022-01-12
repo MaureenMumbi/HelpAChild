@@ -16,6 +16,7 @@ import androidx.appcompat.widget.AppCompatImageButton
 import dagger.hilt.android.AndroidEntryPoint
 import org.fh.cfct.model.Child
 import org.fh.helpachild.R
+import org.fh.helpachild.utils.utilFunctions
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,6 +41,9 @@ class AddChildActivity : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_child)
+
+        val utlFunction = utilFunctions()
+
         full_name = findViewById(R.id.full_name)
         gender = findViewById(R.id.gender)
         dob = findViewById(R.id.dob)
@@ -69,7 +73,7 @@ class AddChildActivity : AppCompatActivity() {
         val button = findViewById<AppCompatButton>(R.id.save)
 
         button.setOnClickListener {
-            val dateofbirth = convertDate(dob.text.toString());
+            val dateofbirth = utlFunction.convertDate(dob.text.toString());
             var child = Child(
                 0,
                 full_name.text.toString(),
@@ -80,41 +84,16 @@ class AddChildActivity : AppCompatActivity() {
                 profile_photo.text.toString(),
                 parent_idno.text.toString(),
                 bio.text.toString(),
-                getCurrentDateTime()
+                utlFunction.getCurrentDateTime()
             )
             val replyIntent = Intent()
-//            if (child.()) {
-//                setResult(Activity.RESULT_CANCELED, replyIntent)
-//            } else {
 
-            replyIntent.putExtra(EXTRA_REPLY, child)
+            replyIntent.putExtra(NEW_CHILD, child)
             setResult(Activity.RESULT_OK, replyIntent)
-//            }
+
             finish()
         }
     }
-
-    private fun convertDate(date: String): Calendar {
-        val cal = Calendar.getInstance()
-        val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
-        cal.time = sdf.parse(date) // all done
-
-        return cal;
-    }
-
-    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
-        val formatter = SimpleDateFormat(format, locale)
-        return formatter.format(this)
-    }
-
-    fun getCurrentDateTime(): Calendar {
-        return Calendar.getInstance()
-    }
-
-    companion object {
-        const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
-    }
-
     fun openDatePickerDialog(v: View?) {
         val cal = Calendar.getInstance()
         val datePickerDialog = DatePickerDialog(
@@ -127,5 +106,8 @@ class AddChildActivity : AppCompatActivity() {
         )
         datePickerDialog.datePicker.maxDate = cal.timeInMillis
         datePickerDialog.show()
+    }
+    companion object {
+        const val NEW_CHILD = "com.example.android.childlistsql.REPLY"
     }
 }

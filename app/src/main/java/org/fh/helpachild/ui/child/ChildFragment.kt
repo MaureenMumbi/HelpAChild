@@ -18,7 +18,7 @@ import org.fh.cfct.model.Child
 import org.fh.helpachild.R
 import org.fh.helpachild.adapters.ChildListAdapter
 import org.fh.helpachild.databinding.FragmentChildBinding
-
+const val CHILD_ID = "child_id"
 @AndroidEntryPoint
 class ChildFragment : Fragment() {
     val newChildActivityRequestCode = 1
@@ -65,7 +65,7 @@ class ChildFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, intentData)
 
         if (requestCode == newChildActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            intentData?.getParcelableExtra<Child>(AddChildActivity.EXTRA_REPLY)?.let { reply ->
+            intentData?.getParcelableExtra<Child>(AddChildActivity.NEW_CHILD)?.let { reply ->
                 val child =  reply
                 addChild(child)
 

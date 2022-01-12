@@ -8,9 +8,12 @@ class SponsorRepository @Inject constructor(private val sponsorDao: SponsorDao) 
 
     fun getAllSponsorWithChildren() = sponsorDao.getSponsorWithChildren()
 
-    fun getSponsor(sponsorId: Long) = sponsorDao.getSponsorById(sponsorId)
+    suspend fun getSponsor(sponsorId: Long) = sponsorDao.getSponsorById(sponsorId)
 
-    fun addSponsor(sponsor: Sponsor) {
+    suspend fun addSponsor(sponsor: Sponsor) {
         sponsorDao.insert(sponsor)
+    }
+    suspend fun deleteSponsor(sponsor: Long) {
+        sponsorDao.deleteByID(sponsor)
     }
 }

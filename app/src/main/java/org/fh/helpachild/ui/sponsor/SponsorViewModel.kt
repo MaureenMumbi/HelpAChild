@@ -1,13 +1,22 @@
 package org.fh.helpachild.ui.sponsor
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import org.fh.cfct.model.Child
+import org.fh.cfct.model.ChildRepository
+import org.fh.cfct.model.Sponsor
+import org.fh.cfct.model.SponsorRepository
+import javax.inject.Inject
 
-class SponsorViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Sponsor Fragment"
+@HiltViewModel
+class SponsorViewModel @Inject internal constructor(
+    val sponsorRepository: SponsorRepository,
+) : ViewModel() {
+
+    val allSponsors: LiveData<List<Sponsor>> = sponsorRepository.getAllSponsors().asLiveData()
+    fun insert(sponsor: Sponsor) = viewModelScope.launch {
+        sponsorRepository.addSponsor(sponsor)
     }
-    val text: LiveData<String> = _text
 }

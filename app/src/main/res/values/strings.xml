@@ -16,4 +16,16 @@
     <string name="parentidno">Parent ID No</string>
     <string name="bio">Child Bio</string>
     <string name="location">Location</string>
+    <string name="updatedchild">Child updated successfully</string>
+    <string name="fab_content_description">Add Sponsor</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="paymentcard">Payment Card</string>
+    <string name="no_sponsor_image_content_description">"No Sponsor added "</string>
+    <string name="remove_sponsor">Remove Sponsor</string>
+    <string name="update_sponsor">Update Sponsor</string>
+    <string name="sponsorbio">Bio</string>
+    <string name="child_image_content_description">Child Profile Photo</string>
+    <string name="remove_child">Remove Child</string>
+    <string name="update_child">Update Child</string>
 </resources>
