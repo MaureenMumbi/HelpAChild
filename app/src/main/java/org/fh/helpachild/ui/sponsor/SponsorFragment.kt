@@ -54,7 +54,12 @@ class SponsorFragment : Fragment() {
 
         sponsorViewModel.allSponsors.observe(viewLifecycleOwner) { sponsor ->
             // Update the cached copy of the children in the adapter.
-            sponsor.let { sponsorlistadapter.submitList(it) }
+            if(sponsor.isEmpty()) {
+                binding.emptyView.visibility = View.GONE
+            }
+            sponsor.let { sponsorlistadapter.submitList(it)
+
+            }
         }
 
         val fab = binding.addSponsorFab
@@ -62,6 +67,8 @@ class SponsorFragment : Fragment() {
             val intent = Intent(context, AddSponsorActivity::class.java)
             startActivityForResult(intent, newSponsorActivityRequestCode)
         }
+
+
 
         return root
     }

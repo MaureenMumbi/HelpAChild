@@ -48,7 +48,12 @@ class ChildFragment : Fragment() {
 
         childViewModel.allChildren.observe(viewLifecycleOwner) { children ->
             // Update the cached copy of the children in the adapter.
+
+            if(children.isEmpty()) {
+                binding.emptyView.visibility = View.GONE
+            }
             children.let { adapter.submitList(it) }
+
         }
 
         val fab = binding.fab
