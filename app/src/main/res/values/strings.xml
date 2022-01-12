@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HelpAChild</string>
+    <string name="title_home">Home</string>
+    <string name="title_child">Child </string>
+    <string name="title_sponsor">Sponsor</string>
+    <string name="add_child">Add Child</string>
+    <string name="hint_fullname">Full Name</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Failed to Save</string>
+    <string name="fillindetails">Fill in the details</string>
+    <string name="age">Date of Birth</string>
+    <string name="pickadate">Pick a date</string>
+    <string name="gender">Gender</string>
+    <string name="country">Country</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="parentidno">Parent ID No</string>
+    <string name="bio">Child Bio</string>
+    <string name="location">Location</string>
+</resources>
