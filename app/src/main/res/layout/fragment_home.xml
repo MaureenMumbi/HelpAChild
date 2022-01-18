@@ -14,19 +14,16 @@
         android:gravity="center"
         android:text="CFCT (Child Focused Community Transformation)"
         android:textColor="@color/black"
-      android:padding="26dp"
+        android:padding="26dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         />
 
     <ImageView
         android:id="@+id/myImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:src="@drawable/hope"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textHome"
-        app:layout_constraintHeight_percent=".8"/>
+        android:gravity="center"/>
 
 
 

@@ -62,8 +62,8 @@ class AddSponsorActivity : AppCompatActivity() {
                 country.text.toString(),
                 phone_no.text.toString(),
                 email.text.toString(),
-                payment_card.text.toString(),
                 bio.text.toString(),
+                payment_card.text.toString(),
                 utlFunction.getCurrentDateTime()
             )
             val replyIntent = Intent()

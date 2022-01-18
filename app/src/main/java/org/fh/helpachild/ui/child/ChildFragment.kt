@@ -50,7 +50,9 @@ class ChildFragment : Fragment() {
             // Update the cached copy of the children in the adapter.
 
             if(children.isEmpty()) {
-                binding.emptyView.visibility = View.GONE
+                binding.noChildrenLayout.visibility = View.VISIBLE
+            }else{
+                binding.noChildrenLayout.visibility = View.GONE
             }
             children.let { adapter.submitList(it) }
 

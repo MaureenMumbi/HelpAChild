@@ -138,7 +138,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/button_save"
                 android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/bio"
@@ -147,7 +148,7 @@
                 android:ems="20"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:hint="@string/bio" />
+                android:hint="@string/sponsorbio" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

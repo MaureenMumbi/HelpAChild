@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.fh.cfct.model.Child
 import org.fh.cfct.model.Sponsor
 import org.fh.helpachild.R
@@ -45,6 +46,11 @@ class ChildListAdapter() :
             currentChild = child
             fullname.text = child.full_name
             country.text = child.country
+            Glide
+                .with(itemView.context)
+                .load(child.profile_photo)
+                .centerCrop()
+                .into(profilephoto)
 
         }
     }

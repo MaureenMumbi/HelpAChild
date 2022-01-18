@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HelpAChild</string>
+    <string name="app_name">Help A Child</string>
     <string name="title_home">Home</string>
     <string name="title_child">Child </string>
     <string name="title_sponsor">Sponsor</string>
@@ -28,4 +28,7 @@
     <string name="child_image_content_description">Child Profile Photo</string>
     <string name="remove_child">Remove Child</string>
     <string name="update_child">Update Child</string>
+    <string name="takeapic">Take Child\'s Photo</string>
+    <string name="childdetails">Child Details</string>
+    <string name="sponsordetails">Sponsor Details</string>
 </resources>

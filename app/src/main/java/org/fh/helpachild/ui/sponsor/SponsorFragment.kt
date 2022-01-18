@@ -55,7 +55,9 @@ class SponsorFragment : Fragment() {
         sponsorViewModel.allSponsors.observe(viewLifecycleOwner) { sponsor ->
             // Update the cached copy of the children in the adapter.
             if(sponsor.isEmpty()) {
-                binding.emptyView.visibility = View.GONE
+                binding.noSponsorLayout.visibility = View.VISIBLE
+            }else{
+                binding.noSponsorLayout.visibility = View.GONE
             }
             sponsor.let { sponsorlistadapter.submitList(it)
 
